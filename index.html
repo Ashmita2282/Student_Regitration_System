@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Student Registration form">
+    <meta name="description" content="Registration form">
+    <meta name="author" content="Ashmita Shrivas">
+    <title>Student Registration System</title>
+    <link rel="icon" href="header.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-r hover:from-green-300 hover:to-blue-600 from-pink-300 to-blue-400">
+    <div class="flex flex-col  text-center m-1">
+        <div class="text-transparent bg-clip-text bg-gradient-to-r from-purple-100 to-pink-100 p-5 shadow-2xl">
+            <h1 class="text-5xl font-bold italic">Student Registration System
+                <i class="fa-regular fa-address-card"></i>
+            </h1>
+            <p class="text-2xl font-bold pt-5">Welcome 👋 to the Student Registration System!</p>
+            <p class="text-xl font-bold italic"> This system allows you to register
+                student details, display
+                them in a dynamic table, and provides functionalities to edit or delete the registered students.</p>
+        </div>
+        <div class="flex w-[100%]  flex-col justify-evenly sm:flex-row ">
+            <div class="sm:w-[49%] w-full">
+                <div class="text-center p-5">
+                    <form action=""
+                        class=" shadow-2xl p-5 mr-3 rounded-lg border-4 border-opacity-5 shadow-lg bg-slate-200">
+                        <h1 class="text-slate-500 font-bold pb-5">Fill the below Form for the Registration : </h1>
+                        <div class="flex flex-col justify-between">
+                            <input type="text" placeholder="Student Name"
+                                class="p-2 m-2 bg-slate-500 text-slate-100 rounded-lg" id="name" required>
+                            <input type="number" placeholder="Roll No."
+                                class="input p-2 m-2 bg-slate-500 text-slate-100 rounded-lg" id="rollNo" required>
+                            <input type="email" placeholder="Email"
+                                class="input p-2 m-2 bg-slate-500 text-slate-100 rounded-lg" id="email" required>
+                            <input type="number" placeholder="Phone No."
+                                class="input p-2 m-2 bg-slate-500 text-slate-100 rounded-lg" id="phoneNo" required>
+                            <button type="button"
+                                class="buttoninput p-2 m-2 rounded-full bg-secondary text-slate-500 font-bold shadow-lg hover:shadow-secondary animate-pulse
+                            bg-violet-200 hover:bg-violet-400 active:bg-violet-500 focus:outline-none focus:ring focus:ring-violet-100">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="table-container" class="m-5 p-4 sm:w-[49%] shadow-2xl w-full"></div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+    <script src="https://kit.fontawesome.com/710919bc1f.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
