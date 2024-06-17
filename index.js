@@ -44,6 +44,7 @@ function studentDetails() {
     email.value === "" ||
     phone.value === ""
   ) {
+    alert("Please fill out all fields before submitting.");
     return;
   }
 
