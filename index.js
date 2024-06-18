@@ -3,6 +3,7 @@ const rollNo = document.getElementById("rollNo");
 const email = document.getElementById("email");
 const phone = document.getElementById("phoneNo");
 const tableContainer = document.getElementById("table-container");
+const errorMessages = document.getElementById("errorMessages");
 
 const button = document.querySelector(".buttoninput");
 
@@ -36,6 +37,18 @@ function loadTableFromLocalStorage() {
 }
 
 function studentDetails() {
+  errorMessages.innerHTML = "";
+
+  if (!validateEmail(email.value)) {
+    errorMessages.innerHTML += "<p>Invalid email format.</p>";
+    return;
+  }
+
+  if (!validatePhone(phone.value)) {
+    errorMessages.innerHTML += "<p>Phone number must contain only numbers.</p>";
+    return;
+  }
+
   const existingData = JSON.parse(localStorage.getItem("details")) || [];
 
   if (
@@ -76,6 +89,16 @@ function studentDetails() {
   rollNo.value = "";
   email.value = "";
   phone.value = "";
+}
+
+function validateEmail(email) {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(email);
+}
+
+function validatePhone(phone) {
+  const re = /^\d+$/;
+  return re.test(phone);
 }
 
 function appendToTable(student, index) {
@@ -140,6 +163,8 @@ function deleteItem(e) {
   }
 }
 
+
+// remove the data in local storage 
 function removeFromLocalStorage(index) {
   let existingData = JSON.parse(localStorage.getItem("details")) || [];
   if (index > -1) {
